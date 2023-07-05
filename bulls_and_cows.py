@@ -3,19 +3,20 @@ bulls_and_cows.py: Druhy projekt do Engeto Online Python Akademie
 autor: Dominik Beran
 email: d.beran27@gmail.com
 discord: Despeerado#8409
-
+Program pozdraví užitele a vypíše úvodní text
+Program dále vytvoří tajné 4místné číslo (číslice musí být unikátní a nesmí začínat 0)
+Hráč hádá číslo. Program jej upozorní, pokud zadá číslo kratší nebo delší než 4 čísla, pokud bude obsahovat duplicity, začínat nulou, příp. obsahovat nečíselné znaky
+Program vyhodnotí tip uživatele
+Program dále vypíše počet bull/ bulls (pokud uživatel uhodne jak číslo, tak jeho umístění), příp. cows/ cows (pokud uživatel uhodne pouze číslo, ale ne jeho umístění). # Vrácené ohodnocení musí brát ohled na jednotné a množné číslo ve výstupu. Tedy 1 bull a 2 bulls (stejně pro cow/cows).
 """
-# Program pozdraví užitele a vypíše úvodní text
-# Program dále vytvoří tajné 4místné číslo (číslice musí být unikátní a nesmí začínat 0)
-# Hráč hádá číslo. Program jej upozorní, pokud zadá číslo kratší nebo delší než 4 čísla, pokud bude obsahovat duplicity, začínat nulou, příp. obsahovat nečíselné znaky
-# Program vyhodnotí tip uživatele
-# Program dále vypíše počet bull/ bulls (pokud uživatel uhodne jak číslo, tak jeho umístění), příp. cows/ cows (pokud uživatel uhodne pouze číslo, ale ne jeho umístění). # Vrácené ohodnocení musí brát ohled na jednotné a množné číslo ve výstupu. Tedy 1 bull a 2 bulls (stejně pro cow/cows).
 
 import random
 
 print("Hi there!")
 print(50*'-')
 print("I've generated a random 4 digit number for you. Let's play a bulls and cows game.")
+
+# nahodne cislo generovane pocitacem
 
 random_numbers = random.sample(range(10), 4)
 list_numbers = []
