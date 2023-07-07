@@ -36,8 +36,16 @@ def matches(user_input, computer_number):
 	# print(list_matches)
 	bulls = list_matches  # spravne cislo na spravnem umisteni
 	# print(f"Bulls:{bulls}")
+
+	""" vytvoreni novych promennych - co jsou bulls, nejsou cows"""
+	shoda = 0
+	for i in range(len(user_list)):
+		if not user_list[i] == computer_list[i]:
+			shoda+=1
+	print(f"toto je shoda:{shoda}")
 	
 	return bulls, cows
+
 
 def switch_case(bulls, cows):
 	if bulls == 0 and cows == 0:
@@ -77,7 +85,9 @@ def game():
 	while condition:
 		# probiha validace
 		user_input = validation()
+
 		bulls, cows = matches(user_input, computer_number)
+		
 		switch_case(bulls, cows)
 		# print(bulls)
 		# print(cows)
