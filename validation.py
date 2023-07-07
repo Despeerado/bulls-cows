@@ -28,35 +28,33 @@ def computer_generator():
     print(computer_number)
     return computer_number
 
-# pro kontrolu, muzu vymazat
-# generated_number = computer_generator()
-
 def validation():
-    """ validace user inputu"""
-    user_input = (input(">>>" + " "))
-    if user_input.isdigit():
-        # prevedeni user_input do setu kvuli porovnani
-        duplications_control = set(user_input)
-        # pokud se delky shoduji, program se vykona, jinak vypise chybovou hlasku
-        if len(duplications_control) == len(user_input):
+    """ user input validation"""
+    while True:
+        user_input = (input(">>>" + " "))
+        if user_input.isdigit():
+            # converting user_input to a set for comparison
+            duplications_control = set(user_input)
+            # if the lengths match, the program will execute; otherwise, it will display an error  message
+            if len(duplications_control) == len(user_input):
 
-            # vyuzivam promennych pro vetsi prehlednost smycek
-            digit = user_input
-            non_zero_index = user_input[0] != "0"
-            length = len(user_input) == 4
+                # I am using variables for better loop readability
+                digit = user_input
+                non_zero_index = user_input[0] != "0"
+                length = len(user_input) == 4
 
-            if digit and non_zero_index:
-                if length:
-                    # print(f">>> {user_input}")
-                    return user_input
+                if digit and non_zero_index:
+                    if length:
+
+                        return user_input
+                    else:
+                        print("Number must have 4 numbers!")
                 else:
-                    print("Number must have at least 4 numbers!")
+                    print("User input must be a number and cannot start with zero!")
             else:
-                print("User input must be a number and cannot start with zero!")
+                print("There are duplications in this number.")
         else:
-            print("There are duplications in this number.")
-    else:
-        print("You can write only numbers.")
+            print("You can write only numbers.")
 
     print(50*'-')
     print(user_input)
