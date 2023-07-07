@@ -19,13 +19,11 @@ def computer_generator():
     nahodne ctyrciferne cislo, nezacinajici nulou, generovane pocitacem
     """
     random_numbers = random.sample(range(1,10), 4)
-    list_numbers = []
 
-    for i in random_numbers:
-        list_numbers.append(str(i))
+    list_numbers = [str(i) for i in random_numbers]
 
     computer_number = "".join(list_numbers)
-    print(computer_number)
+    # print(computer_number)
     return computer_number
 
 def validation():
@@ -37,7 +35,6 @@ def validation():
             duplications_control = set(user_input)
             # if the lengths match, the program will execute; otherwise, it will display an error  message
             if len(duplications_control) == len(user_input):
-
                 # I am using variables for better loop readability
                 digit = user_input
                 non_zero_index = user_input[0] != "0"
@@ -55,6 +52,3 @@ def validation():
                 print("There are duplications in this number.")
         else:
             print("You can write only numbers.")
-
-    print(50*'-')
-    print(user_input)

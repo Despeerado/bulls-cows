@@ -53,6 +53,7 @@ def game():
 
 		user_input = validation()
 
+		# bulls, cows = matches(user_input, computer_number)
 		bulls, cows = matches(user_input, computer_number)
 
 		switch_suffix(bulls, cows)
